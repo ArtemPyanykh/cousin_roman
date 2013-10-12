@@ -25,14 +25,10 @@ Just use `#to_arabic` or `#to_arabic!` method.
 
 For example:
 
-```ruby!
-
+```ruby
 'MMXIII'.to_arabic # => 2013
-
 'MMYUOX'.to_arabic # => nil
-
 'MMYOUX'.to_arabic! # => TypeError: not a valid roman number
-
 ```
 
 ## Contributing
