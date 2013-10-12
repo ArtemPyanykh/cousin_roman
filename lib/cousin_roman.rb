@@ -1,5 +1,3 @@
 require "cousin_roman/version"
-
-module CousinRoman
-  # Your code goes here...
-end
+require "cousin_roman/conversion"
+require "cousin_roman/string_extension"
