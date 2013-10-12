@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "cousin_roman"
   spec.version       = CousinRoman::VERSION
   spec.authors       = ["Artem Pyanykh"]
-  spec.email         = ["a.pyanych@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.email         = ["artem.pyanykh@gmail.com"]
+  spec.description   = %q{String extension adding capaibility to convert Roman number to Integers.}
+  spec.summary       = %q{Conversion from Roman numbers to Arabic ones.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

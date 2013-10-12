@@ -1,6 +1,9 @@
 # CousinRoman
 
-TODO: Write a gem description
+*CousinRoman* is a String extension that allows you to convert
+string representation of Roman numbers
+(following modern subtractive notation)
+to Arabic numbers (i.e. Integers).
 
 ## Installation
 
@@ -18,7 +21,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Just use `#to_arabic` or `#to_arabic!` method.
+
+For example:
+
+```ruby!
+
+'MMXIII'.to_arabic # => 2013
+
+'MMYUOX'.to_arabic # => nil
+
+'MMYOUX'.to_arabic! # => TypeError: not a valid roman number
+
+```
 
 ## Contributing
 
