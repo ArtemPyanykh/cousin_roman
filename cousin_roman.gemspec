@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["artem.pyanykh@gmail.com"]
   spec.description   = %q{String extension adding capaibility to convert Roman number to Integers.}
   spec.summary       = %q{Conversion from Roman numbers to Arabic ones.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/ArtemPyanykh/cousin_roman"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

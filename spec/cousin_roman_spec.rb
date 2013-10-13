@@ -188,9 +188,11 @@ end
 describe String do
   [:to_arabic, :to_arabic!].each do |meth|
     it { should respond_to(meth) }
+
     it "should call CousinRoman.#{meth} on String##{meth}" do
-      CousinRoman.should_receive(meth)
-      subject.send(meth)
+      roman = 'i'
+      CousinRoman.should_receive(meth).with(roman).and_call_original
+      roman.send(meth).should == 1
     end
   end
 end
