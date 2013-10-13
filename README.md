@@ -1,8 +1,7 @@
 # CousinRoman
 
-`CousinRoman` is a `String` extension that allows you to convert
-string representation of Roman numbers
-(following modern subtractive notation)
+`CousinRoman` is a `String` extension which allows you to convert
+Roman numerals (following modern subtractive notation)
 to Arabic numbers (i.e. Integers).
 
 ## Installation
@@ -21,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-Just use `#to_arabic` or `#to_arabic!` method.
+Just use `String#to_arabic` or `String#to_arabic!` method.
 
 For example:
 
