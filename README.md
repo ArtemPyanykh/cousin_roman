@@ -1,6 +1,6 @@
 # CousinRoman
 
-*CousinRoman* is a String extension that allows you to convert
+`CousinRoman` is a `String` extension that allows you to convert
 string representation of Roman numbers
 (following modern subtractive notation)
 to Arabic numbers (i.e. Integers).
