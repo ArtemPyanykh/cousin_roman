@@ -1,8 +1,8 @@
 # CousinRoman
 
-`CousinRoman` is a `String` extension which allows you to convert
-Roman numerals (following modern subtractive notation)
-to Arabic numbers (i.e. Integers).
+`CousinRoman` provides functionality to convert between Roman and Arabian numerals.
+
+The functionality provided via String and Integer extensions.
 
 ## Installation
 
@@ -20,14 +20,22 @@ Or install it yourself as:
 
 ## Usage
 
-Just use `String#to_arabic` or `String#to_arabic!` method.
+Just use `String#to_arabian` or `String#to_arabian!` methods
+if you want to convert from Roman to Arabian
+and
+`Integer#to_roman` or `Integer#to_roman!`
+if you want to convert from Arabian to Roman.
 
 For example:
 
 ```ruby
-'MMXIII'.to_arabic # => 2013
-'MMYUOX'.to_arabic # => nil
-'MMYOUX'.to_arabic! # => TypeError: not a valid roman number
+'MMXIII'.to_arabian # => 2013
+'MMYUOX'.to_arabian # => nil
+'MMYOUX'.to_arabian! # => TypeError: not a valid roman number
+
+2013.to_roman # => 'MMXIII'
+'0'.to_roman # => nil
+'100500'.to_roman # => TypeError: not a valid roman number
 ```
 
 ## Testing
@@ -36,7 +44,7 @@ Just run
 
     $ rake
 
-under gem folder.
+under gem folder (be prepared for massive output).
 
 ## Contributing
 

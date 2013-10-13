@@ -20,7 +20,7 @@ module CousinRoman
     # 2. Sum this numeric values to get the final answer
     def convert(number)
       intermediate = number.dup.downcase
-      SUBTRACTIVE.each do |factor, value|
+      SUBTRACTIVES.each do |factor, value|
         intermediate.gsub!(factor, "(#{value})")
       end
       ONES.merge(FIVES).each do |factor, value|
@@ -32,12 +32,12 @@ module CousinRoman
       end
     end
 
-    def to_arabic(number)
+    def to_arabian(number)
       clean = number.strip
       convert clean if valid? clean
     end
 
-    def to_arabic!(number)
+    def to_arabian!(number)
       clean = number.strip
       if valid? clean
         convert clean

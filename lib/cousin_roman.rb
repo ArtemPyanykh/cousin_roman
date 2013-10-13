@@ -1,6 +1,8 @@
 require "cousin_roman/version"
 require "cousin_roman/roman"
+require "cousin_roman/arabian"
 require "cousin_roman/string_extension"
+require "cousin_roman/integer_extension"
 
 module CousinRoman
   LITERALS = [
@@ -26,7 +28,7 @@ module CousinRoman
     'd' => 500,
   }
 
-  SUBTRACTIVE = {
+  SUBTRACTIVES = {
     'iv' => 4,
     'ix' => 9,
     'xl' => 40,
@@ -35,5 +37,5 @@ module CousinRoman
     'cm' => 900,
   }
 
-  FACTORS = ONES.merge(FIVES).merge(SUBTRACTIVE)
+  FACTORS = ONES.merge(FIVES).merge(SUBTRACTIVES)
 end

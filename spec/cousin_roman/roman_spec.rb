@@ -40,7 +40,7 @@ describe CousinRoman::Roman do
         end
       end
 
-      CousinRoman::FIVES.merge(CousinRoman::SUBTRACTIVE).keys.each do |factor|
+      CousinRoman::FIVES.merge(CousinRoman::SUBTRACTIVES).keys.each do |factor|
         it "should not allow repetition of #{factor}" do
           CousinRoman::Roman.valid?(factor*2).should be_false
         end
@@ -157,25 +157,25 @@ describe CousinRoman::Roman do
     end
   end
 
-  describe 'to_arabic' do
+  describe 'to_arabian' do
     it 'should call convert on valid number' do
       CousinRoman::Roman.should_receive(:convert).and_call_original
-      CousinRoman::Roman.to_arabic('MMM').should == 3000
+      CousinRoman::Roman.to_arabian('MMM').should == 3000
     end
 
     it 'should return nil on invalid number' do
-      CousinRoman::Roman.to_arabic('YRU?!').should be_nil
+      CousinRoman::Roman.to_arabian('YRU?!').should be_nil
     end
   end
 
-  describe 'to_arabic!' do
+  describe 'to_arabian!' do
     it 'should call convert on valid number' do
       CousinRoman::Roman.should_receive(:convert).and_call_original
-      CousinRoman::Roman.to_arabic!('MMM').should == 3000
+      CousinRoman::Roman.to_arabian!('MMM').should == 3000
     end
 
     it 'should throw TypeError on invalid number' do
-      expect { CousinRoman::Roman.to_arabic!('YRU?!') }.to raise_error(TypeError)
+      expect { CousinRoman::Roman.to_arabian!('YRU?!') }.to raise_error(TypeError)
     end
   end
 
