@@ -1,5 +1,3 @@
-require 'cousin_roman'
-
 module CousinRoman
   module Arabian
     extend self

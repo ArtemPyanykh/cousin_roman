@@ -1,5 +1,3 @@
-require 'cousin_roman'
-
 module CousinRoman
   module Roman
     extend self
