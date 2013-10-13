@@ -28,14 +28,14 @@ module CousinRoman
     end
 
     def build_roman(thousands, hundreds, tens, ones)
-      build_pow(thousands, 4) +
-      build_pow(hundreds, 3) +
-      build_pow(tens, 2) +
-      build_pow(ones, 1)
+      build_pow(thousands, 3) +
+      build_pow(hundreds, 2) +
+      build_pow(tens, 1) +
+      build_pow(ones, 0)
     end
 
     def build_pow(number, pow)
-      literals = pow_literals(pow)
+      literals = CousinRoman.literals_for_pow pow
 
       case number
       when 1..3 then literals[:one]*number
@@ -44,24 +44,6 @@ module CousinRoman
       when 9 then literals[:subtractives][9]
       else ""
       end
-    end
-
-    def pow_literals(pow)
-      one_literal, _ = ONES.find do |literal, value|
-        value >= 10 ** (pow - 1) and value < 10 ** pow
-      end
-      five_literal, _ = FIVES.find do |literal, value|
-        value >= 10 ** (pow - 1) and value < 10 ** pow
-      end
-      subtractive_literals = {}
-      SUBTRACTIVES.select do |literal, value|
-        value >= 10 ** (pow - 1) and value < 10 ** pow
-      end.each do |literal, number|
-        order = number / (10 ** (pow - 1))
-        subtractive_literals[order] = literal
-      end
-
-      {one: one_literal, five: five_literal, subtractives: subtractive_literals}
     end
   end
 end

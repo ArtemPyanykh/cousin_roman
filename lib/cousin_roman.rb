@@ -38,4 +38,16 @@ module CousinRoman
   }
 
   FACTORS = ONES.merge(FIVES).merge(SUBTRACTIVES)
+
+  def self.literals_for_pow(pow)
+    one, five = ONES.keys[pow], FIVES.keys[pow]
+    subtractives = if pow.between? 0, 2
+                     skeys = SUBTRACTIVES.keys
+                     { 4 => skeys[pow*2], 9 => skeys[pow*2 + 1] }
+                   else
+                     nil
+                   end
+
+    { one: one, five: five, subtractives: subtractives }
+  end
 end

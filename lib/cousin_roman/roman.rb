@@ -18,12 +18,11 @@ module CousinRoman
     # 2. Sum this numeric values to get the final answer
     def convert(number)
       intermediate = number.dup.downcase
-      SUBTRACTIVES.each do |factor, value|
-        intermediate.gsub!(factor, "(#{value})")
-      end
-      ONES.merge(FIVES).each do |factor, value|
-        intermediate.gsub!(factor, "(#{value})")
-      end
+      compound = braketize_value_of SUBTRACTIVES
+      singular = braketize_value_of ONES.merge(FIVES)
+
+      compound.each { |literal, val| intermediate.gsub!(literal, val) }
+      singular.each { |literal, val| intermediate.gsub!(literal, val) }
 
       intermediate.scan(/\((\d*)\)/).reduce(0) do |sum, term|
         sum + term.first.to_i
@@ -46,6 +45,13 @@ module CousinRoman
 
     def roman_regex
       /^(M{0,3})(D?C{0,3}|C[DM])(L?X{0,3}|X[LC])(V?I{0,3}|I[VX])$/i
+    end
+
+    private
+
+    # Make hash of the following structure {'i' => '(1)', 'v' => '(5)'...}
+    def braketize_value_of(factors)
+      Hash[factors.map { |literal, val| [literal, "(#{val})"] } ]
     end
   end
 end
