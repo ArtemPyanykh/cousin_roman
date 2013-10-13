@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = CousinRoman::VERSION
   spec.authors       = ["Artem Pyanykh"]
   spec.email         = ["artem.pyanykh@gmail.com"]
-  spec.description   = %q{Easily convert Roman and Arabian number. Functionality provided via String and extensions}
+  spec.description   = %q{Easily convert Roman and Arabian numbers. Functionality provided via String and Integer extensions}
   spec.summary       = %q{Convert Roman numerals to Integers and vice versa}
   spec.homepage      = "https://github.com/ArtemPyanykh/cousin_roman"
   spec.license       = "MIT"
