@@ -1,11 +1,11 @@
-require "cousin_roman/conversion"
+require "cousin_roman/roman"
 
 class String
   def to_arabic
-    CousinRoman.to_arabic(self)
+    CousinRoman::Roman.to_arabic(self)
   end
 
   def to_arabic!
-    CousinRoman.to_arabic!(self)
+    CousinRoman::Roman.to_arabic!(self)
   end
 end
