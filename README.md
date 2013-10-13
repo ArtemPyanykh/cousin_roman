@@ -31,6 +31,14 @@ For example:
 'MMYOUX'.to_arabic! # => TypeError: not a valid roman number
 ```
 
+## Testing
+
+Just run
+
+    $ rake
+
+under gem folder.
+
 ## Contributing
 
 1. Fork it
