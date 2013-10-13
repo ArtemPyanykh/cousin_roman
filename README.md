@@ -35,7 +35,7 @@ For example:
 
 2013.to_roman # => 'MMXIII'
 '0'.to_roman # => nil
-'100500'.to_roman # => TypeError: not a valid roman number
+'100500'.to_roman! # => TypeError: not a valid roman number
 ```
 
 ## Testing
