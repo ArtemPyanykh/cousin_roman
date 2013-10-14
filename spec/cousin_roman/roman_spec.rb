@@ -75,29 +75,29 @@ describe CousinRoman::Roman do
     describe 'ordering validation' do
       context 'when validating that factors are ordered by descreasing of power' do
         ORDERINGS_RIGHT = [
-          'md', 'mc',
-          'cl', 'cx',
-          'xv', 'xi',
-          'mcm', 'mcd',
-          'cxc', 'cxl',
-          'xix', 'xiv'
+          'm-d', 'm-c',
+          'c-l', 'c-x',
+          'x-v', 'x-i',
+          'm-cm', 'm-cd',
+          'c-xc', 'c-xl',
+          'x-ix', 'x-iv'
         ]
         ORDERINGS_WRONG = [
-          'dm', 'lc', 'vx',
-          'cmm', 'cdm',
-          'xcc', 'xlc',
-          'ixx', 'ivx'
+          'd-m', 'l-c', 'v-x',
+          'cm-m', 'cd-m',
+          'xc-c', 'x-lc',
+          'ix-x', 'iv-x'
         ]
 
         ORDERINGS_RIGHT.each do |pair|
-          high, low = pair.split('', 2)
+          high, low = pair.split('-')
           it "should allow #{high}#{low}" do
             CousinRoman::Roman.valid?(high + low).should be_true
           end
         end
 
         ORDERINGS_WRONG.each do |pair|
-          low, high = pair.split('', 2)
+          low, high = pair.split('-')
           it "should not allow #{low}#{high}" do
             CousinRoman::Roman.valid?(low + high).should be_false
           end
