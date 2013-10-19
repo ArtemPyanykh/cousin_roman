@@ -3,7 +3,7 @@ require 'spec_helper'
 describe CousinRoman::Arabian do
   describe 'valid?' do
     it 'should consider invalid numbers <= 0' do
-      (-10..0).each do |number|
+      [-1, 0].each do |number|
         CousinRoman::Arabian.valid?(number).should be_false
       end
     end
