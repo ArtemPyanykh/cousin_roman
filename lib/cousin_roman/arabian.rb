@@ -11,11 +11,8 @@ module CousinRoman
     end
 
     def to_roman!(arabian)
-      if valid? arabian
-        convert arabian
-      else
-        raise TypeError, 'not a valid roman number'
-      end
+       valid? arabian or raise TypeError, 'not a valid roman number'
+       convert arabian
     end
 
     def convert(number)

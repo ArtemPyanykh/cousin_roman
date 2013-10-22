@@ -21,8 +21,7 @@ module CousinRoman
       compound = braketize_value_of SUBTRACTIVES
       singular = braketize_value_of ONES.merge(FIVES)
 
-      compound.each { |literal, val| intermediate.gsub!(literal, val) }
-      singular.each { |literal, val| intermediate.gsub!(literal, val) }
+      [compound, singular].each { |factors| factors.each { |literal, val| intermediate.gsub!(literal, val) } }
 
       intermediate.scan(/\((\d*)\)/).reduce(0) do |sum, term|
         sum + term.first.to_i
@@ -36,11 +35,8 @@ module CousinRoman
 
     def to_arabian!(number)
       clean = number.strip
-      if valid? clean
-        convert clean
-      else
-        raise TypeError, 'not a valid roman number'
-      end
+      valid? clean or raise TypeError, 'not a valid roman number'
+      convert clean
     end
 
     def roman_regex
